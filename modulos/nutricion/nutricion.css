@@ -1,65 +1,47 @@
-.nutricion-wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem 1.5rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #333;
-}
-.nutricion-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: linear-gradient(135deg, #ffffff 0%, #f4f9f4 100%);
-    padding: 2rem;
-    border-radius: 16px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    margin-bottom: 2rem;
-    border-left: 6px solid #4CAF50;
-}
+/* =========================================
+   MÓDULO DE NUTRICIÓN - DISEÑO PREMIUM
+   ========================================= */
+.nutricion-wrapper { max-width: 1200px; margin: 0 auto; padding: 2rem 1.5rem; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333; }
+
+/* Encabezado */
+.nutricion-header { display: flex; justify-content: space-between; align-items: center; background: linear-gradient(135deg, #ffffff 0%, #f4f9f4 100%); padding: 2rem; border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 2rem; border-left: 6px solid #4CAF50; }
 .nutricion-header h1 { color: #2c3e50; margin-bottom: 0.5rem; font-size: 2.2rem; }
 .nutricion-header p { color: #666; font-size: 1.1rem; }
 .header-icon .material-symbols-outlined { font-size: 5rem; color: #4CAF50; opacity: 0.8; }
+
+/* Buscador */
 .search-section { margin-bottom: 2rem; }
-.search-box {
-    display: flex;
-    align-items: center;
-    background: white;
-    padding: 0.8rem 1.5rem;
-    border-radius: 50px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    border: 1px solid #e0e0e0;
-    transition: all 0.3s ease;
-}
+.search-box { display: flex; align-items: center; background: white; padding: 0.8rem 1.5rem; border-radius: 50px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); border: 1px solid #e0e0e0; transition: all 0.3s ease; }
 .search-box:focus-within { border-color: #4CAF50; box-shadow: 0 4px 15px rgba(76, 175, 80, 0.2); }
 .search-icon { color: #999; margin-right: 10px; }
 .search-box input { border: none; outline: none; width: 100%; font-size: 1.1rem; color: #333; background: transparent; }
+
+/* Grid de recetas */
 .recetas-section h2 { color: #2c3e50; margin-bottom: 1.5rem; font-size: 1.5rem; }
-.grid-recetas { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
-.tarjeta-receta {
-    background: white;
-    border-radius: 12px;
-    padding: 1.5rem;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    border: 1px solid #eee;
-    display: flex;
-    flex-direction: column;
-}
-.tarjeta-receta:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
-.tarjeta-receta h3 { color: #2c3e50; margin-bottom: 1rem; font-size: 1.3rem; }
-.badge-calorias {
-    display: inline-block;
-    background: #E8F5E9;
-    color: #2E7D32;
-    padding: 0.4rem 0.8rem;
-    border-radius: 20px;
-    font-weight: bold;
-    font-size: 0.9rem;
-    margin-top: auto;
-    width: fit-content;
-}
-.badge-calorias span { font-size: 1.1rem; }
+.grid-recetas { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2rem; }
+
+/* Tarjeta Premium */
+.tarjeta-receta { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease; display: flex; flex-direction: column; border: 1px solid #f0f0f0; }
+.tarjeta-receta:hover { transform: translateY(-8px); box-shadow: 0 12px 25px rgba(0,0,0,0.15); }
+
+/* Imagen */
+.tarjeta-imagen { position: relative; height: 180px; width: 100%; overflow: hidden; }
+.tarjeta-imagen img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+.tarjeta-receta:hover .tarjeta-imagen img { transform: scale(1.05); }
+.badge-dificultad { position: absolute; top: 12px; right: 12px; background: rgba(255, 255, 255, 0.9); color: #2c3e50; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; backdrop-filter: blur(4px); }
+
+/* Contenido */
+.tarjeta-contenido { padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1; }
+.tarjeta-contenido h3 { color: #2c3e50; margin-bottom: 1rem; font-size: 1.25rem; line-height: 1.3; }
+.tarjeta-detalles { display: flex; justify-content: space-between; align-items: center; margin-top: auto; border-top: 1px solid #eee; padding-top: 1rem; }
+.detalle { display: flex; align-items: center; gap: 4px; font-size: 0.9rem; color: #666; font-weight: 500; }
+.detalle .material-symbols-outlined { font-size: 1.2rem; }
+.detalle.calorias { color: #e67e22; }
+.detalle.calorias .material-symbols-outlined { color: #e67e22; }
+
+/* Estado vacío */
 .no-resultados { grid-column: 1 / -1; text-align: center; padding: 3rem; color: #888; font-size: 1.2rem; background: white; border-radius: 12px; border: 2px dashed #ddd; }
+
 @media (max-width: 768px) {
     .nutricion-header { flex-direction: column; text-align: center; }
     .header-icon { display: none; }
