@@ -4,15 +4,3 @@
     margin: 0 auto;
     padding: 2rem;
 }
-
-.nutricion-container h1 {
-    color: #2c3e50;
-    margin-bottom: 1rem;
-}
-
-#lista-nutricion {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 1rem;
-    margin-top: 1rem;
-}
