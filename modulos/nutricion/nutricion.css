@@ -1,130 +1,48 @@
-/* Estilos propios del módulo Nutrición. No modifica el CSS global de Sazón. */
-.nutricion-hero {
-  margin: 0 0 1.25rem;
-  padding: 2rem;
-  border-radius: 18px;
-  color: #fff;
-  background: linear-gradient(135deg, #114622, #3d8e33);
-}
-.nutricion-etiqueta {
-  margin: 0 0 0.5rem;
-  color: #d8ecba;
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-.nutricion-hero h1 {
-  margin: 0;
-  color: #fff;
-  font-family: "Poppins", sans-serif;
-  font-size: clamp(1.8rem, 4vw, 2.6rem);
-}
-.nutricion-hero p:last-child {
-  max-width: 65ch;
-  margin-bottom: 0;
-}
-.nutricion-panel {
-  margin-bottom: 2rem;
-}
-.nutricion-panel h2 {
-  color: #215b33;
-  font-family: "Poppins", sans-serif;
-}
-.nutricion-label {
-  display: block;
-  margin: 0.5rem 0;
-  font-weight: 600;
-}
-.nutricion-panel select {
-  width: 100%;
-  padding: 0.75rem 0.9rem;
-  border: 1px solid #dad9c4;
-  border-radius: 10px;
-  background: #fff;
-  color: #3f4040;
-  font: inherit;
-}
-.nutricion-panel select:focus,
-.nutricion-panel input:focus-visible {
-  outline: 2px solid #7fba00;
-  outline-offset: 2px;
-}
-.ingredientes-seccion,
-.resumen-seccion {
-  margin-top: 1.75rem;
-}
-.nutricion-ayuda {
-  margin-top: -0.35rem;
-  color: #666;
-}
-.ingredientes-lista {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 0.75rem;
-}
-.nutricion-ingrediente {
-  padding: 1rem;
-  border: 1px solid #dad9c4;
-  border-left: 5px solid #3d8e33;
-  border-radius: 12px;
-  background: #fff;
-}
-.nutricion-ingrediente-nombre {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.45rem;
-  font-weight: 700;
-  color: #2a1605;
-  cursor: pointer;
-}
-.nutricion-ingrediente input {
-  margin-top: 0.25rem;
-  accent-color: #3d8e33;
-}
-.nutricion-ingrediente-detalle {
-  margin: 0.65rem 0 0;
-  color: #666;
-  font-size: 0.9rem;
-  line-height: 1.5;
-}
-.nutricion-resumen {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0.75rem;
-}
-.nutricion-dato {
-  padding: 1rem 0.65rem;
-  border: 1px solid #cfe3b8;
-  border-radius: 12px;
-  background: #edf4e1;
-  text-align: center;
-}
-.nutricion-dato p {
-  margin: 0 0 0.4rem;
-  color: #215b33;
-  font-weight: 700;
-}
-.nutricion-dato strong {
-  color: #114622;
-  font-size: clamp(1.15rem, 2.5vw, 1.55rem);
-}
-.nutricion-nota {
-  margin-top: 1rem;
-  color: #666;
-  font-size: 0.85rem;
-  line-height: 1.5;
-}
-@media (max-width: 700px) {
-  .nutricion-resumen {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .nutricion-hero {
-    padding: 1.4rem;
-  }
-}
-@media (max-width: 380px) {
-  .nutricion-resumen {
-    grid-template-columns: 1fr;
-  }
+/* =========================================
+   MÓDULO DE NUTRICIÓN - DISEÑO PREMIUM
+   ========================================= */
+.nutricion-wrapper { max-width: 1200px; margin: 0 auto; padding: 2rem 1.5rem; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333; }
+
+/* Encabezado */
+.nutricion-header { display: flex; justify-content: space-between; align-items: center; background: linear-gradient(135deg, #ffffff 0%, #f4f9f4 100%); padding: 2rem; border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 2rem; border-left: 6px solid #4CAF50; }
+.nutricion-header h1 { color: #2c3e50; margin-bottom: 0.5rem; font-size: 2.2rem; }
+.nutricion-header p { color: #666; font-size: 1.1rem; }
+.header-icon .material-symbols-outlined { font-size: 5rem; color: #4CAF50; opacity: 0.8; }
+
+/* Buscador */
+.search-section { margin-bottom: 2rem; }
+.search-box { display: flex; align-items: center; background: white; padding: 0.8rem 1.5rem; border-radius: 50px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); border: 1px solid #e0e0e0; transition: all 0.3s ease; }
+.search-box:focus-within { border-color: #4CAF50; box-shadow: 0 4px 15px rgba(76, 175, 80, 0.2); }
+.search-icon { color: #999; margin-right: 10px; }
+.search-box input { border: none; outline: none; width: 100%; font-size: 1.1rem; color: #333; background: transparent; }
+
+/* Grid de recetas */
+.recetas-section h2 { color: #2c3e50; margin-bottom: 1.5rem; font-size: 1.5rem; }
+.grid-recetas { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2rem; }
+
+/* Tarjeta Premium */
+.tarjeta-receta { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease; display: flex; flex-direction: column; border: 1px solid #f0f0f0; }
+.tarjeta-receta:hover { transform: translateY(-8px); box-shadow: 0 12px 25px rgba(0,0,0,0.15); }
+
+/* Imagen */
+.tarjeta-imagen { position: relative; height: 180px; width: 100%; overflow: hidden; }
+.tarjeta-imagen img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+.tarjeta-receta:hover .tarjeta-imagen img { transform: scale(1.05); }
+.badge-dificultad { position: absolute; top: 12px; right: 12px; background: rgba(255, 255, 255, 0.9); color: #2c3e50; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; backdrop-filter: blur(4px); }
+
+/* Contenido */
+.tarjeta-contenido { padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1; }
+.tarjeta-contenido h3 { color: #2c3e50; margin-bottom: 1rem; font-size: 1.25rem; line-height: 1.3; }
+.tarjeta-detalles { display: flex; justify-content: space-between; align-items: center; margin-top: auto; border-top: 1px solid #eee; padding-top: 1rem; }
+.detalle { display: flex; align-items: center; gap: 4px; font-size: 0.9rem; color: #666; font-weight: 500; }
+.detalle .material-symbols-outlined { font-size: 1.2rem; }
+.detalle.calorias { color: #e67e22; }
+.detalle.calorias .material-symbols-outlined { color: #e67e22; }
+
+/* Estado vacío */
+.no-resultados { grid-column: 1 / -1; text-align: center; padding: 3rem; color: #888; font-size: 1.2rem; background: white; border-radius: 12px; border: 2px dashed #ddd; }
+
+@media (max-width: 768px) {
+    .nutricion-header { flex-direction: column; text-align: center; }
+    .header-icon { display: none; }
 }

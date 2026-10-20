@@ -1,94 +1,41 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Sazón · Nutrición</title>
-    <link rel="stylesheet" href="../../assets/css/sazon.css" />
-    <link rel="stylesheet" href="nutricion.css" />
-  </head>
-  <body>
-    <header data-layout="header"></header>
-
-    <main class="contenedor pagina-modulo">
-      <section class="nutricion-hero">
-        <p class="nutricion-etiqueta">Módulo de bienestar</p>
-        <h1>Información nutricional</h1>
-        <p>
-          Consulta los nutrientes de diferentes platos y selecciona los
-          ingredientes que deseas incluir en el cálculo.
-        </p>
-      </section>
-
-      <section
-        class="bloque-modulo nutricion-panel"
-        aria-labelledby="titulo-plato"
-      >
-        <h2 id="titulo-plato">Selecciona un plato</h2>
-        <label for="platoSelect" class="nutricion-label">Plato</label>
-        <select id="platoSelect" aria-describedby="nutricion-estado">
-          <option value="">Cargando platos...</option>
-        </select>
-
-        <div
-          id="nutricion-estado"
-          class="mensaje-estado"
-          role="status"
-          aria-live="polite"
-        >
-          Cargando información nutricional...
-        </div>
-
-        <section
-          class="ingredientes-seccion"
-          aria-labelledby="titulo-ingredientes"
-        >
-          <h2 id="titulo-ingredientes">Ingredientes</h2>
-          <p class="nutricion-ayuda">
-            Marca o desmarca los ingredientes para actualizar los valores
-            nutricionales.
-          </p>
-          <div id="listaIngredientes" class="ingredientes-lista"></div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrición - Sazón</title>
+    <link rel="stylesheet" href="../../assets/css/sazon.css">
+    <link rel="stylesheet" href="nutricion.css">
+    <!-- Iconos de Google Material Symbols para que se vea profesional -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+    <div id="navbar"></div>
+    <main class="nutricion-wrapper">
+        <header class="nutricion-header">
+            <div class="header-text">
+                <h1>Nutrición y Bienestar</h1>
+                <p>Descubre el valor nutricional de tus recetas favoritas y planifica tu alimentación.</p>
+            </div>
+            <div class="header-icon">
+                <span class="material-symbols-outlined">monitor_heart</span>
+            </div>
+        </header>
+        <section class="search-section">
+            <div class="search-box">
+                <span class="material-symbols-outlined search-icon">search</span>
+                <input type="text" id="buscador-nutricion" placeholder="Buscar receta por nombre...">
+            </div>
         </section>
-
-        <section class="resumen-seccion" aria-labelledby="titulo-resumen">
-          <h2 id="titulo-resumen">Información nutricional total</h2>
-          <p class="nutricion-ayuda">
-            Suma de los ingredientes seleccionados en el plato.
-          </p>
-          <div class="nutricion-resumen">
-            <article class="nutricion-dato">
-              <p>Calorías</p>
-              <strong id="calorias">0 kcal</strong>
-            </article>
-            <article class="nutricion-dato">
-              <p>Proteínas</p>
-              <strong id="proteinas">0 g</strong>
-            </article>
-            <article class="nutricion-dato">
-              <p>Carbohidratos</p>
-              <strong id="carbohidratos">0 g</strong>
-            </article>
-            <article class="nutricion-dato">
-              <p>Grasas</p>
-              <strong id="grasas">0 g</strong>
-            </article>
-          </div>
-          <p class="nutricion-nota">
-            Los valores son aproximados y dependen de las porciones y la
-            preparación. Esta herramienta es informativa y no reemplaza la
-            orientación de un profesional de nutrición.
-          </p>
+        <section class="recetas-section">
+            <h2>Recetas Disponibles</h2>
+            <div id="lista-nutricion" class="grid-recetas"></div>
         </section>
-      </section>
     </main>
-
-    <footer data-layout="footer"></footer>
-
-    <script src="../../services/api.config.js"></script>
+    <div id="footer"></div>
     <script src="../../assets/js/layout.js"></script>
-    <script src="../../data/platos.js"></script>
-    <script src="servicio.js"></script>
-    <script src="main.js"></script>
-  </body>
+    <script src="../../data/usuario.js"></script>
+    <script src="../../data/recetas.js"></script>
+    <script src="nutricion.js"></script>
+</body>
 </html>
