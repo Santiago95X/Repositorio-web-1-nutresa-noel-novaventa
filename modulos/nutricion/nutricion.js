@@ -1,8 +1,3 @@
-/**
- * Módulo de Nutrición
- * HU-01: Muestra información nutricional de recetas
- */
-// Lógica del módulo de Nutrición
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Módulo de Nutrición cargado correctamente.');
     
@@ -11,8 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
         datos = window.recetasMockData.recetas;
     } else {
         datos = [
-            { nombre: 'Receta 1', calorias: 250 },
-            { nombre: 'Receta 2', calorias: 400 }
+            { nombre: 'Ensalada César Saludable', calorias: 320 },
+            { nombre: 'Salmón al Horno con Vegetales', calorias: 450 },
+            { nombre: 'Bowl de Avena y Frutas', calorias: 280 },
+            { nombre: 'Smoothie Verde Detox', calorias: 150 }
         ];
     }
 
@@ -22,22 +19,36 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderizarLista(lista) {
         if (!contenedor) return;
         contenedor.innerHTML = '';
+        if (lista.length === 0) {
+            contenedor.innerHTML = `<div class="no-resultados">No se encontraron recetas con ese nombre.</div>`;
+            return;
+        }
         lista.forEach(item => {
-            contenedor.innerHTML += `<p>${item.nombre || item.titulo} - ${item.calorias || 'N/A'} kcal</p>`;
+            const nombre = item.nombre || item.titulo || 'Receta sin nombre';
+            const calorias = item.calorias || 'N/A';
+            const tarjetaHTML = `
+                <div class="tarjeta-receta">
+                    <h3>${nombre}</h3>
+                    <div class="badge-calorias">
+                        <span>${calorias}</span> kcal
+                    </div>
+                </div>
+            `;
+            contenedor.innerHTML += tarjetaHTML;
         });
     }
 
     function filtrar() {
         const texto = buscador.value.toLowerCase();
-        const filtrados = datos.filter(item => 
-            (item.nombre || item.titulo || '').toLowerCase().includes(texto)
-        );
+        const filtrados = datos.filter(item => {
+            const nombre = item.nombre || item.titulo || '';
+            return nombre.toLowerCase().includes(texto);
+        });
         renderizarLista(filtrados);
     }
 
     if (buscador) {
         buscador.addEventListener('input', filtrar);
     }
-
     renderizarLista(datos);
 });
