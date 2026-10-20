@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
         { nombre: 'Ensalada César Saludable', calorias: 320, tiempo: '15 min', dificultad: 'Fácil', imagen: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=600&auto=format&fit=crop' },
         { nombre: 'Salmón al Horno con Vegetales', calorias: 450, tiempo: '25 min', dificultad: 'Media', imagen: 'https://images.unsplash.com/photo-1467003909585-2f8a72700288?q=80&w=600&auto=format&fit=crop' },
         { nombre: 'Bowl de Avena y Frutas', calorias: 280, tiempo: '10 min', dificultad: 'Fácil', imagen: 'https://images.unsplash.com/photo-1517673400267-0251440c45dc?q=80&w=600&auto=format&fit=crop' },
-        { nombre: 'Smoothie Verde Detox', calorias: 150, tiempo: '5 min', dificultad: 'Fácil', imagen: 'https://images.unsplash.com/photo-1622597467836-f3824f1c1f2b?q=80&w=600&auto=format&fit=crop' }
     ];
 
     // Intentar leer mocks reales si existen y asignarles imagen
