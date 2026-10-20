@@ -1,3 +1,7 @@
+/**
+ * Módulo de Nutrición
+ * HU-01: Muestra información nutricional de recetas
+ */
 // Lógica del módulo de Nutrición
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Módulo de Nutrición cargado correctamente.');
