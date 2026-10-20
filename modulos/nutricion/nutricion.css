@@ -1,130 +1,18 @@
-/* Estilos propios del módulo Nutrición. No modifica el CSS global de Sazón. */
-.nutricion-hero {
-  margin: 0 0 1.25rem;
-  padding: 2rem;
-  border-radius: 18px;
-  color: #fff;
-  background: linear-gradient(135deg, #114622, #3d8e33);
+/* Estilos propios del módulo de Nutrición */
+.nutricion-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
 }
-.nutricion-etiqueta {
-  margin: 0 0 0.5rem;
-  color: #d8ecba;
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+
+.nutricion-container h1 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
 }
-.nutricion-hero h1 {
-  margin: 0;
-  color: #fff;
-  font-family: "Poppins", sans-serif;
-  font-size: clamp(1.8rem, 4vw, 2.6rem);
-}
-.nutricion-hero p:last-child {
-  max-width: 65ch;
-  margin-bottom: 0;
-}
-.nutricion-panel {
-  margin-bottom: 2rem;
-}
-.nutricion-panel h2 {
-  color: #215b33;
-  font-family: "Poppins", sans-serif;
-}
-.nutricion-label {
-  display: block;
-  margin: 0.5rem 0;
-  font-weight: 600;
-}
-.nutricion-panel select {
-  width: 100%;
-  padding: 0.75rem 0.9rem;
-  border: 1px solid #dad9c4;
-  border-radius: 10px;
-  background: #fff;
-  color: #3f4040;
-  font: inherit;
-}
-.nutricion-panel select:focus,
-.nutricion-panel input:focus-visible {
-  outline: 2px solid #7fba00;
-  outline-offset: 2px;
-}
-.ingredientes-seccion,
-.resumen-seccion {
-  margin-top: 1.75rem;
-}
-.nutricion-ayuda {
-  margin-top: -0.35rem;
-  color: #666;
-}
-.ingredientes-lista {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 0.75rem;
-}
-.nutricion-ingrediente {
-  padding: 1rem;
-  border: 1px solid #dad9c4;
-  border-left: 5px solid #3d8e33;
-  border-radius: 12px;
-  background: #fff;
-}
-.nutricion-ingrediente-nombre {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.45rem;
-  font-weight: 700;
-  color: #2a1605;
-  cursor: pointer;
-}
-.nutricion-ingrediente input {
-  margin-top: 0.25rem;
-  accent-color: #3d8e33;
-}
-.nutricion-ingrediente-detalle {
-  margin: 0.65rem 0 0;
-  color: #666;
-  font-size: 0.9rem;
-  line-height: 1.5;
-}
-.nutricion-resumen {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0.75rem;
-}
-.nutricion-dato {
-  padding: 1rem 0.65rem;
-  border: 1px solid #cfe3b8;
-  border-radius: 12px;
-  background: #edf4e1;
-  text-align: center;
-}
-.nutricion-dato p {
-  margin: 0 0 0.4rem;
-  color: #215b33;
-  font-weight: 700;
-}
-.nutricion-dato strong {
-  color: #114622;
-  font-size: clamp(1.15rem, 2.5vw, 1.55rem);
-}
-.nutricion-nota {
-  margin-top: 1rem;
-  color: #666;
-  font-size: 0.85rem;
-  line-height: 1.5;
-}
-@media (max-width: 700px) {
-  .nutricion-resumen {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .nutricion-hero {
-    padding: 1.4rem;
-  }
-}
-@media (max-width: 380px) {
-  .nutricion-resumen {
-    grid-template-columns: 1fr;
-  }
+
+#lista-nutricion {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
 }
