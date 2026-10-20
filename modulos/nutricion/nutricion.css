@@ -4,3 +4,10 @@
     margin: 0 auto;
     padding: 2rem;
 }
+
+#lista-nutricion {
+    margin-top: 2rem;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
