@@ -4,10 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nutrición - Sazón</title>
+    
+    <!-- 1. KIT DE MARCA (Obligatorio según el PDF) -->
+    <link rel="stylesheet" href="../../assets/css/variables.css">
     <link rel="stylesheet" href="../../assets/css/sazon.css">
-    <link rel="stylesheet" href="nutricion.css">
-    <!-- Iconos de Google Material Symbols para que se vea profesional -->
+    
+    <!-- Fuentes exigidas -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    
+    <link rel="stylesheet" href="nutricion.css">
 </head>
 <body>
     <div id="navbar"></div>
@@ -15,27 +21,30 @@
         <header class="nutricion-header">
             <div class="header-text">
                 <h1>Nutrición y Bienestar</h1>
-                <p>Descubre el valor nutricional de tus recetas favoritas y planifica tu alimentación.</p>
+                <p>Descubre el valor nutricional de tus recetas favoritas.</p>
             </div>
             <div class="header-icon">
                 <span class="material-symbols-outlined">monitor_heart</span>
             </div>
         </header>
+        
         <section class="search-section">
             <div class="search-box">
                 <span class="material-symbols-outlined search-icon">search</span>
                 <input type="text" id="buscador-nutricion" placeholder="Buscar receta por nombre...">
             </div>
         </section>
+        
         <section class="recetas-section">
             <h2>Recetas Disponibles</h2>
             <div id="lista-nutricion" class="grid-recetas"></div>
         </section>
     </main>
     <div id="footer"></div>
+
     <script src="../../assets/js/layout.js"></script>
-    <script src="../../data/usuario.js"></script>
-    <script src="../../data/recetas.js"></script>
-    <script src="nutricion.js"></script>
+    
+    <!-- 2. CARGA COMO MÓDULO ES6 (Obligatorio según el PDF) -->
+    <script type="module" src="nutricion.ui.js"></script>
 </body>
 </html>
