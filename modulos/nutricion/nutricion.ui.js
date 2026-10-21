@@ -4,8 +4,9 @@ import { NutricionStorage } from './nutricion.storage.js';
 document.addEventListener('DOMContentLoaded', () => {
     const contenedor = document.getElementById('lista-nutricion');
     const buscador = document.getElementById('buscador-nutricion');
+    const errorMsg = document.getElementById('error-busqueda');
 
-    // Recuperar última búsqueda (Demuestra uso de LocalStorage)
+    // Recuperar última búsqueda
     const ultima = NutricionStorage.obtenerUltimaBusqueda();
     if (ultima && ultima.ultimaBusqueda) {
         buscador.value = ultima.ultimaBusqueda;
@@ -14,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderizarLista(lista) {
         contenedor.innerHTML = '';
         if (lista.length === 0) {
-            contenedor.innerHTML = `<div class="no-resultados">No se encontraron recetas.</div>`;
+            contenedor.innerHTML = `<div class="no-resultados">No se encontraron recetas con ese nombre.</div>`;
             return;
         }
 
@@ -40,7 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
                             <span class="detalle"><span class="material-symbols-outlined">timer</span> ${item.tiempo}</span>
                             <span class="detalle calorias"><span class="material-symbols-outlined">local_fire_department</span> ${item.calorias} kcal</span>
                         </div>
-                        <!-- Botón MPA que redirige pasando el ID por URL -->
                         <button class="btn-ver-receta" onclick="window.location.href='detalle-receta.html?id=${item.id}'">
                             Ver Receta <span class="material-symbols-outlined">arrow_forward</span>
                         </button>
@@ -53,13 +53,23 @@ document.addEventListener('DOMContentLoaded', () => {
     if (buscador) {
         buscador.addEventListener('input', (e) => {
             const texto = e.target.value;
-            NutricionStorage.guardarUltimaBusqueda(texto); // Guardar en LocalStorage
+            
+            // VALIDACIÓN ESTRICTA (Solo letras y espacios, sin números)
+            const regexSoloLetras = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]*$/;
+            
+            if (!regexSoloLetras.test(texto)) {
+                errorMsg.style.display = 'block'; // Mostrar error
+                return; // Detener la ejecución (No procesa la búsqueda)
+            } else {
+                errorMsg.style.display = 'none'; // Ocultar error
+            }
+
+            NutricionStorage.guardarUltimaBusqueda(texto);
             const filtrados = filtrarRecetas(datosMock, texto);
             renderizarLista(filtrados);
         });
     }
 
-    // Carga inicial respetando la última búsqueda
     if (buscador.value) {
         renderizarLista(filtrarRecetas(datosMock, buscador.value));
     } else {
