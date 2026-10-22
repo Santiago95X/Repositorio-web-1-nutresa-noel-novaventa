@@ -51,6 +51,11 @@
         <span class="material-symbols-outlined search-icon">search</span>
         <input type="text" id="buscador-nutricion" placeholder="Buscar receta por nombre..." maxlength="30" required>
     </div>
+    <div class="filtros-rapidos">
+        <button class="filtro-btn activo" data-filtro="todas">Todas</button>
+        <button class="filtro-btn" data-filtro="Fácil">Fácil</button>
+        <button class="filtro-btn" data-filtro="Media">Media</button>
+    </div>
     <p id="error-busqueda" class="error-validacion">Por favor, ingrese un término de búsqueda válido (solo letras).</p>
     <p id="contador-resultados" class="contador-texto"></p>
     <div id="lista-nutricion" class="grid-recetas"></div>

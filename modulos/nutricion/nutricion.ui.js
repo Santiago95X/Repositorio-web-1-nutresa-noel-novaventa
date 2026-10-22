@@ -5,25 +5,29 @@ const contenedor = document.getElementById('lista-nutricion');
 const buscador = document.getElementById('buscador-nutricion');
 const errorMsg = document.getElementById('error-busqueda');
 const contador = document.getElementById('contador-resultados');
+const botonesFiltro = document.querySelectorAll('.filtro-btn');
+
+let filtroActual = 'todas';
 
 function renderizarLista(lista) {
     if (!contenedor) return;
     contenedor.innerHTML = '';
     
-    // Actualizar contador de resultados
-    if (contador) {
-        contador.textContent = `Mostrando ${lista.length} receta(s) encontrada(s)`;
-    }
+    if (contador) contador.textContent = `Mostrando ${lista.length} receta(s)`;
 
     if (lista.length === 0) {
-        contenedor.innerHTML = `<div class="no-resultados">No se encontraron recetas con ese nombre.</div>`;
+        contenedor.innerHTML = `<div class="no-resultados">No se encontraron recetas.</div>`;
         return;
     }
 
-    lista.forEach(item => {
+    lista.forEach((item, index) => {
         const etiquetasHTML = item.etiquetas.map(et => `<span class="etiqueta-dieta">${et}</span>`).join('');
+        
+        // Añadimos un retraso para la animación en cascada
+        const animacionDelay = index * 0.1; 
+
         contenedor.innerHTML += `
-            <div class="tarjeta-receta">
+            <div class="tarjeta-receta" style="animation-delay: ${animacionDelay}s">
                 <div class="tarjeta-imagen">
                     <img src="${item.imagen}" alt="${item.nombre}">
                     <span class="badge-dificultad">${item.dificultad}</span>
@@ -50,14 +54,24 @@ function renderizarLista(lista) {
     });
 }
 
+function aplicarFiltros() {
+    const texto = buscador.value;
+    let filtrados = filtrarRecetas(datosMock, texto);
+    
+    if (filtroActual !== 'todas') {
+        filtrados = filtrados.filter(item => item.dificultad === filtroActual);
+    }
+    
+    renderizarLista(filtrados);
+}
+
 if (buscador) {
     const ultima = NutricionStorage.obtenerUltimaBusqueda();
     if (ultima && ultima.ultimaBusqueda) {
         buscador.value = ultima.ultimaBusqueda;
-        renderizarLista(filtrarRecetas(datosMock, buscador.value));
-    } else {
-        renderizarLista(datosMock);
     }
+    
+    aplicarFiltros();
 
     buscador.addEventListener('input', (e) => {
         const texto = e.target.value;
@@ -70,6 +84,19 @@ if (buscador) {
             errorMsg.style.display = 'none';
         }
         NutricionStorage.guardarUltimaBusqueda(texto);
-        renderizarLista(filtrarRecetas(datosMock, texto));
+        aplicarFiltros();
     });
 }
+
+// Lógica de los botones de filtro
+botonesFiltro.forEach(boton => {
+    boton.addEventListener('click', () => {
+        // Quitar la clase 'activo' de todos
+        botonesFiltro.forEach(b => b.classList.remove('activo'));
+        // Ponerla en el clickeado
+        boton.classList.add('activo');
+        
+        filtroActual = boton.dataset.filtro;
+        aplicarFiltros();
+    });
+});

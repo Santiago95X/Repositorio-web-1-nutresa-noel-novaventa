@@ -398,3 +398,55 @@ body {
     font-size: 1.2rem;
     opacity: 0.8;
 }
+
+/* --- Filtros Rápidos --- */
+.filtros-rapidos {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 2rem;
+}
+
+.filtro-btn {
+    background: #ffffff;
+    border: 1px solid rgba(0,0,0,0.1);
+    padding: 0.5rem 1.5rem;
+    border-radius: 30px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--gris-texto);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filtro-btn:hover {
+    border-color: var(--lima);
+    color: var(--verde-noche);
+}
+
+.filtro-btn.activo {
+    background: var(--verde-nutresa);
+    color: #ffffff;
+    border-color: var(--verde-nutresa);
+    box-shadow: 0 4px 10px rgba(33, 91, 51, 0.2);
+}
+
+/* --- Animación del Título --- */
+.nutricion-wrapper header h1 {
+    background: linear-gradient(90deg, var(--verde-noche) 0%, var(--verde-hoja) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* --- Animación de Entrada de Tarjetas --- */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.tarjeta-receta {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0; /* Empieza invisible hasta que corre la animación */
+}
