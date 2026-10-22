@@ -18,7 +18,16 @@
                 <h1>Nutrición y Bienestar</h1>
                 <p>Descubre el valor nutricional de tus recetas favoritas.</p>
             </div>
-            <div class="header-icon">
+<!-- 5: Santiago - Interfaz de Busqueda y Tarjetas -->
+<div class="nutricion-seccion-santiago">
+    <div class="search-box">
+        <span class="material-symbols-outlined search-icon">search</span>
+        <input type="text" id="buscador-nutricion" placeholder="Buscar receta por nombre..." maxlength="30" required>
+    </div>
+    <p id="error-busqueda" class="error-validacion">Por favor, ingrese un término de búsqueda válido (solo letras).</p>
+    <div id="lista-nutricion" class="grid-recetas"></div>
+</div>
+    </div>
                 <span class="material-symbols-outlined">monitor_heart</span>
             </div>
         </header>
@@ -41,5 +50,6 @@
     <div id="footer"></div>
     <script src="../../assets/js/layout.js"></script>
     <script type="module" src="nutricion.ui.js"></script>
+<script type="module" src="nutricion.ui.js"></script>
 </body>
 </html>
