@@ -10,13 +10,13 @@ function renderizarLista(lista) {
     if (!contenedor) return;
     contenedor.innerHTML = '';
     
-    // Actualizar contador
+    // Actualizar contador de resultados
     if (contador) {
-        contador.textContent = `Mostrando ${lista.length} receta(s)`;
+        contador.textContent = `Mostrando ${lista.length} receta(s) encontrada(s)`;
     }
 
     if (lista.length === 0) {
-        contenedor.innerHTML = `<div class="no-resultados">No se encontraron recetas.</div>`;
+        contenedor.innerHTML = `<div class="no-resultados">No se encontraron recetas con ese nombre.</div>`;
         return;
     }
 
