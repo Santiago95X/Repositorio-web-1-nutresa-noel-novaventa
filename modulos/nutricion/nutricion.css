@@ -482,3 +482,149 @@ body {
 .btn-volver .material-symbols-outlined {
     font-size: 1.2rem;
 }
+
+/* --- Botón de Despensa --- */
+.acciones-detalle {
+    margin-bottom: 2rem;
+}
+
+.btn-accion-primario {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--verde-nutresa);
+    color: #ffffff;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-accion-primario:hover {
+    background: var(--verde-noche);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(33, 91, 51, 0.3);
+}
+
+/* --- Efecto Glassmorphism en el Buscador --- */
+.search-box {
+    background: rgba(255, 255, 255, 0.7); /* Fondo semi-transparente */
+    backdrop-filter: blur(10px); /* Efecto de cristal */
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* --- Responsive Real (Para Celulares) --- */
+@media (max-width: 768px) {
+    .nutricion-hero h2 {
+        font-size: 1.8rem;
+        flex-direction: column; /* El ícono arriba del texto */
+        gap: 5px;
+    }
+    
+    .grid-recetas {
+        grid-template-columns: 1fr; /* Una tarjeta por fila */
+    }
+    
+    .detalle-wrapper {
+        margin: 1rem auto;
+    }
+    
+    .detalle-card img {
+        height: 250px;
+    }
+    
+    .detalle-info {
+        padding: 1.5rem;
+    }
+    
+    .detalle-info h1 {
+        font-size: 2rem;
+    }
+    
+    .detalle-badges {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr 1fr; /* Dos stats por fila */
+    }
+}
+
+/* --- Botón de Despensa --- */
+.acciones-detalle {
+    margin-bottom: 2rem;
+}
+
+.btn-accion-primario {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--verde-nutresa);
+    color: #ffffff;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-accion-primario:hover {
+    background: var(--verde-noche);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(33, 91, 51, 0.3);
+}
+
+/* --- Efecto Glassmorphism en el Buscador --- */
+.search-box {
+    background: rgba(255, 255, 255, 0.7); /* Fondo semi-transparente */
+    backdrop-filter: blur(10px); /* Efecto de cristal */
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* --- Responsive Real (Para Celulares) --- */
+@media (max-width: 768px) {
+    .nutricion-hero h2 {
+        font-size: 1.8rem;
+        flex-direction: column; /* El ícono arriba del texto */
+        gap: 5px;
+    }
+    
+    .grid-recetas {
+        grid-template-columns: 1fr; /* Una tarjeta por fila */
+    }
+    
+    .detalle-wrapper {
+        margin: 1rem auto;
+    }
+    
+    .detalle-card img {
+        height: 250px;
+    }
+    
+    .detalle-info {
+        padding: 1.5rem;
+    }
+    
+    .detalle-info h1 {
+        font-size: 2rem;
+    }
+    
+    .detalle-badges {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr 1fr; /* Dos stats por fila */
+    }
+}
