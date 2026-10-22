@@ -2,8 +2,6 @@
    MÓDULO DE NUTRICIÓN - DISEÑO CORPORATIVO
    Paleta de colores oficial (Nutresa)
    ========================================= */
-
-/* Variables locales por si el archivo global falla */
 :root {
     --verde-noche: #114622;
     --verde-nutresa: #215B33;
@@ -15,12 +13,10 @@
     --gris-texto: #3F4040;
     --marfil: #F4E4B8;
 }
-
 body {
-    background-color: #F8F9FA; /* Fondo limpio, no tan amarillo */
+    background-color: #F8F9FA; 
     background-image: radial-gradient(circle at top right, rgba(127, 186, 0, 0.05), transparent 40%);
 }
-
 .nutricion-seccion-santiago {
     max-width: 1100px;
     margin: 0 auto;
@@ -28,15 +24,12 @@ body {
     font-family: 'Inter', sans-serif;
     color: var(--gris-texto);
 }
-
-/* --- Stats Grid (Como en la imagen del profesor) --- */
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1.5rem;
     margin-bottom: 2.5rem;
 }
-
 .stat-card {
     background: #ffffff;
     padding: 1.5rem;
@@ -48,7 +41,6 @@ body {
     border: 1px solid rgba(0,0,0,0.05);
     border-left: 4px solid var(--verde-nutresa);
 }
-
 .stat-icon {
     background: rgba(33, 91, 51, 0.1);
     color: var(--verde-nutresa);
@@ -56,19 +48,16 @@ body {
     border-radius: 12px;
     font-size: 1.8rem;
 }
-
 .stat-info {
     display: flex;
     flex-direction: column;
 }
-
 .stat-value {
     font-family: 'Poppins', sans-serif;
     font-size: 1.4rem;
     font-weight: 700;
     color: var(--verde-noche);
 }
-
 .stat-label {
     font-size: 0.8rem;
     color: var(--gris-texto);
@@ -76,8 +65,6 @@ body {
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
-
-/* --- Hero Header --- */
 .nutricion-hero {
     text-align: center;
     margin-bottom: 2.5rem;
@@ -85,9 +72,8 @@ body {
     background: #ffffff;
     border-radius: 20px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.04);
-    border-top: 4px solid var(--lima); /* El color Lima resalta mucho */
+    border-top: 4px solid var(--lima); 
 }
-
 .nutricion-hero h2 {
     font-family: 'Poppins', sans-serif;
     color: var(--verde-noche);
@@ -98,19 +84,15 @@ body {
     gap: 12px;
     margin-bottom: 0.5rem;
 }
-
 .nutricion-hero h2 .material-symbols-outlined {
     color: var(--verde-nutresa);
     font-size: 2.5rem;
 }
-
 .nutricion-hero p {
     color: var(--gris-texto);
     opacity: 0.8;
     font-size: 1.1rem;
 }
-
-/* --- Buscador --- */
 .search-box {
     display: flex;
     align-items: center;
@@ -123,18 +105,15 @@ body {
     border: 2px solid transparent;
     transition: all 0.3s ease;
 }
-
 .search-box:focus-within {
     border-color: var(--lima);
     box-shadow: 0 6px 20px rgba(127, 186, 0, 0.15);
 }
-
 .search-icon {
     color: var(--verde-nutresa);
     font-size: 1.5rem;
     margin-right: 12px;
 }
-
 .search-box input {
     border: none;
     outline: none;
@@ -144,8 +123,6 @@ body {
     background: transparent;
     font-family: 'Inter', sans-serif;
 }
-
-/* --- Contador --- */
 .contador-texto {
     font-size: 0.9rem;
     color: var(--verde-nutresa);
@@ -161,15 +138,11 @@ body {
     left: 50%;
     transform: translateX(-50%);
 }
-
-/* --- Grid de Recetas --- */
 .grid-recetas {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 2rem;
 }
-
-/* --- Tarjetas --- */
 .tarjeta-receta {
     background: #ffffff;
     border-radius: 16px;
@@ -180,31 +153,26 @@ body {
     flex-direction: column;
     border: 1px solid rgba(0,0,0,0.05);
 }
-
 .tarjeta-receta:hover {
     transform: translateY(-5px);
     box-shadow: 0 12px 25px rgba(0,0,0,0.1);
     border-color: var(--lima);
 }
-
 .tarjeta-imagen {
     position: relative;
     height: 200px;
     width: 100%;
     overflow: hidden;
 }
-
 .tarjeta-imagen img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s ease;
 }
-
 .tarjeta-receta:hover .tarjeta-imagen img {
     transform: scale(1.05);
 }
-
 .badge-dificultad {
     position: absolute;
     top: 12px;
@@ -218,14 +186,12 @@ body {
     text-transform: uppercase;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
-
 .tarjeta-contenido {
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
 }
-
 .tarjeta-contenido h3 {
     font-family: 'Poppins', sans-serif;
     color: var(--verde-noche);
@@ -233,7 +199,6 @@ body {
     font-size: 1.3rem;
     line-height: 1.2;
 }
-
 .tarjeta-descripcion {
     font-size: 0.9rem;
     color: var(--gris-texto);
@@ -241,17 +206,14 @@ body {
     margin-bottom: 1rem;
     line-height: 1.4;
 }
-
-/* Etiquetas de Dieta (Usando el color Lima) */
 .etiquetas-container {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
     margin-bottom: 1.5rem;
 }
-
 .etiqueta-dieta {
-    background: rgba(127, 186, 0, 0.15); /* Lima transparente */
+    background: rgba(127, 186, 0, 0.15); 
     color: var(--verde-nutresa);
     font-size: 0.75rem;
     padding: 0.3rem 0.8rem;
@@ -259,8 +221,6 @@ body {
     font-weight: 700;
     border: 1px solid rgba(127, 186, 0, 0.3);
 }
-
-/* Macros */
 .tarjeta-macros {
     display: flex;
     justify-content: space-between;
@@ -270,20 +230,17 @@ body {
     margin-bottom: 1.5rem;
     border: 1px solid rgba(0,0,0,0.04);
 }
-
 .macro {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
 .macro .valor {
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
     color: var(--verde-noche);
     font-size: 1.1rem;
 }
-
 .macro .label {
     font-size: 0.7rem;
     color: var(--gris-texto);
@@ -291,8 +248,6 @@ body {
     text-transform: uppercase;
     margin-top: 2px;
 }
-
-/* Detalles (Tiempo y Calorías) */
 .tarjeta-detalles {
     display: flex;
     justify-content: space-between;
@@ -302,7 +257,6 @@ body {
     margin-bottom: 1.5rem;
     margin-top: auto;
 }
-
 .detalle {
     display: flex;
     align-items: center;
@@ -311,22 +265,17 @@ body {
     color: var(--gris-texto);
     font-weight: 500;
 }
-
 .detalle .material-symbols-outlined {
     font-size: 1.2rem;
     color: var(--verde-nutresa);
 }
-
 .detalle.calorias {
     color: var(--rojo-nutresa);
     font-weight: 700;
 }
-
 .detalle.calorias .material-symbols-outlined {
     color: var(--rojo-nutresa);
 }
-
-/* Botón */
 .btn-ver-receta {
     width: 100%;
     background: var(--verde-nutresa);
@@ -344,12 +293,9 @@ body {
     align-items: center;
     gap: 8px;
 }
-
 .btn-ver-receta:hover {
     background: var(--verde-noche);
 }
-
-/* Estados */
 .no-resultados {
     grid-column: 1 / -1;
     text-align: center;
@@ -360,7 +306,6 @@ body {
     border-radius: 16px;
     border: 2px dashed rgba(0,0,0,0.1);
 }
-
 .error-validacion {
     color: var(--rojo-nutresa);
     font-size: 0.9rem;
@@ -372,15 +317,12 @@ body {
     padding: 0.5rem;
     border-radius: 8px;
 }
-
-/* --- Estilos para el encabezado del profesor --- */
 .nutricion-wrapper header, 
 .nutricion-header {
     text-align: center;
     padding: 2rem 1rem 1rem 1rem;
     margin-bottom: 1rem;
 }
-
 .nutricion-wrapper header h1,
 .nutricion-header h1 {
     font-family: 'Poppins', sans-serif;
@@ -390,7 +332,6 @@ body {
     margin-bottom: 0.5rem;
     letter-spacing: -0.5px;
 }
-
 .nutricion-wrapper header p,
 .nutricion-header p {
     font-family: 'Inter', sans-serif;
@@ -398,15 +339,12 @@ body {
     font-size: 1.2rem;
     opacity: 0.8;
 }
-
-/* --- Filtros Rápidos --- */
 .filtros-rapidos {
     display: flex;
     justify-content: center;
     gap: 10px;
     margin-bottom: 2rem;
 }
-
 .filtro-btn {
     background: #ffffff;
     border: 1px solid rgba(0,0,0,0.1);
@@ -419,39 +357,30 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
 }
-
 .filtro-btn:hover {
     border-color: var(--lima);
     color: var(--verde-noche);
 }
-
 .filtro-btn.activo {
     background: var(--verde-nutresa);
     color: #ffffff;
     border-color: var(--verde-nutresa);
     box-shadow: 0 4px 10px rgba(33, 91, 51, 0.2);
 }
-
-/* --- Animación del Título --- */
 .nutricion-wrapper header h1 {
     background: linear-gradient(90deg, var(--verde-noche) 0%, var(--verde-hoja) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
-
-/* --- Animación de Entrada de Tarjetas --- */
 @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
-
 .tarjeta-receta {
     animation: fadeInUp 0.6s ease-out forwards;
-    opacity: 0; /* Empieza invisible hasta que corre la animación */
+    opacity: 0; 
 }
-
-/* --- Botón Volver al Catálogo (Página de Detalles) --- */
 .btn-volver {
     display: inline-flex;
     align-items: center;
@@ -470,24 +399,19 @@ body {
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     margin-bottom: 2rem;
 }
-
 .btn-volver:hover {
     background: var(--verde-nutresa);
     color: #ffffff;
     border-color: var(--verde-nutresa);
-    transform: translateX(-5px); /* Se mueve un poquito a la izquierda */
+    transform: translateX(-5px); 
     box-shadow: 0 5px 15px rgba(33, 91, 51, 0.2);
 }
-
 .btn-volver .material-symbols-outlined {
     font-size: 1.2rem;
 }
-
-/* --- Botón de Despensa --- */
 .acciones-detalle {
     margin-bottom: 2rem;
 }
-
 .btn-accion-primario {
     display: inline-flex;
     align-items: center;
@@ -503,64 +427,49 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
 }
-
 .btn-accion-primario:hover {
     background: var(--verde-noche);
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(33, 91, 51, 0.3);
 }
-
-/* --- Efecto Glassmorphism en el Buscador --- */
 .search-box {
-    background: rgba(255, 255, 255, 0.7); /* Fondo semi-transparente */
-    backdrop-filter: blur(10px); /* Efecto de cristal */
+    background: rgba(255, 255, 255, 0.7); 
+    backdrop-filter: blur(10px); 
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.5);
 }
-
-/* --- Responsive Real (Para Celulares) --- */
 @media (max-width: 768px) {
     .nutricion-hero h2 {
         font-size: 1.8rem;
-        flex-direction: column; /* El ícono arriba del texto */
+        flex-direction: column; 
         gap: 5px;
     }
-    
     .grid-recetas {
-        grid-template-columns: 1fr; /* Una tarjeta por fila */
+        grid-template-columns: 1fr; 
     }
-    
     .detalle-wrapper {
         margin: 1rem auto;
     }
-    
     .detalle-card img {
         height: 250px;
     }
-    
     .detalle-info {
         padding: 1.5rem;
     }
-    
     .detalle-info h1 {
         font-size: 2rem;
     }
-    
     .detalle-badges {
         flex-wrap: wrap;
         gap: 10px;
     }
-    
     .stats-grid {
-        grid-template-columns: 1fr 1fr; /* Dos stats por fila */
+        grid-template-columns: 1fr 1fr; 
     }
 }
-
-/* --- Botón de Despensa --- */
 .acciones-detalle {
     margin-bottom: 2rem;
 }
-
 .btn-accion-primario {
     display: inline-flex;
     align-items: center;
@@ -576,55 +485,43 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
 }
-
 .btn-accion-primario:hover {
     background: var(--verde-noche);
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(33, 91, 51, 0.3);
 }
-
-/* --- Efecto Glassmorphism en el Buscador --- */
 .search-box {
-    background: rgba(255, 255, 255, 0.7); /* Fondo semi-transparente */
-    backdrop-filter: blur(10px); /* Efecto de cristal */
+    background: rgba(255, 255, 255, 0.7); 
+    backdrop-filter: blur(10px); 
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.5);
 }
-
-/* --- Responsive Real (Para Celulares) --- */
 @media (max-width: 768px) {
     .nutricion-hero h2 {
         font-size: 1.8rem;
-        flex-direction: column; /* El ícono arriba del texto */
+        flex-direction: column; 
         gap: 5px;
     }
-    
     .grid-recetas {
-        grid-template-columns: 1fr; /* Una tarjeta por fila */
+        grid-template-columns: 1fr; 
     }
-    
     .detalle-wrapper {
         margin: 1rem auto;
     }
-    
     .detalle-card img {
         height: 250px;
     }
-    
     .detalle-info {
         padding: 1.5rem;
     }
-    
     .detalle-info h1 {
         font-size: 2rem;
     }
-    
     .detalle-badges {
         flex-wrap: wrap;
         gap: 10px;
     }
-    
     .stats-grid {
-        grid-template-columns: 1fr 1fr; /* Dos stats por fila */
+        grid-template-columns: 1fr 1fr; 
     }
 }

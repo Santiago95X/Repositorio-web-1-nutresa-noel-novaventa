@@ -1,4 +1,4 @@
-// Abstracción para manejar LocalStorage (Obligatorio por el DoD)
+
 export const NutricionStorage = {
     guardarUltimaBusqueda: (texto) => {
         const data = { ultimaBusqueda: texto, fecha: new Date().toISOString() };

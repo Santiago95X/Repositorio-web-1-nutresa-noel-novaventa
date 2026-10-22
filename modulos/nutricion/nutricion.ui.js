@@ -23,7 +23,7 @@ function renderizarLista(lista) {
     lista.forEach((item, index) => {
         const etiquetasHTML = item.etiquetas.map(et => `<span class="etiqueta-dieta">${et}</span>`).join('');
         
-        // Añadimos un retraso para la animación en cascada
+        
         const animacionDelay = index * 0.1; 
 
         contenedor.innerHTML += `
@@ -88,12 +88,12 @@ if (buscador) {
     });
 }
 
-// Lógica de los botones de filtro
+
 botonesFiltro.forEach(boton => {
     boton.addEventListener('click', () => {
-        // Quitar la clase 'activo' de todos
+        
         botonesFiltro.forEach(b => b.classList.remove('activo'));
-        // Ponerla en el clickeado
+        
         boton.classList.add('activo');
         
         filtroActual = boton.dataset.filtro;

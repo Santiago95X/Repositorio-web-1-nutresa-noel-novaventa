@@ -3,7 +3,7 @@ import { datosMock } from './nutricion.logica.js';
 document.addEventListener('DOMContentLoaded', () => {
     const contenedor = document.getElementById('detalle-contenido');
     
-    // Leer el ID desde la URL (URLParams exigido por el PDF)
+    
     const urlParams = new URLSearchParams(window.location.search);
     const idReceta = parseInt(urlParams.get('id'));
     
@@ -33,11 +33,11 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
     `;
 
-    // Lógica del botón de guardar en despensa (Simulado con LocalStorage)
+    
     const btnGuardar = document.getElementById('btn-guardar-despensa');
     if (btnGuardar) {
         btnGuardar.addEventListener('click', () => {
-            // Guardamos el nombre de la receta en LocalStorage
+            
             let despensa = JSON.parse(localStorage.getItem('sazon_despensa_usuario')) || [];
             if (!despensa.includes(receta.nombre)) {
                 despensa.push(receta.nombre);
