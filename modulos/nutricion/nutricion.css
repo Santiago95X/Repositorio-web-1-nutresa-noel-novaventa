@@ -525,3 +525,46 @@ body {
         grid-template-columns: 1fr 1fr; 
     }
 }
+
+/* --- Selector de Objetivos --- */
+.objetivo-selector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 2rem;
+    background: #ffffff;
+    padding: 1rem 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.05);
+    flex-wrap: wrap;
+}
+
+.objetivo-selector label {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: var(--verde-noche);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.objetivo-selector select {
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    border: 2px solid var(--verde-nutresa);
+    background-color: #f8f9fa;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    color: var(--verde-noche);
+    font-weight: 500;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.objetivo-selector select:hover {
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(33, 91, 51, 0.1);
+}

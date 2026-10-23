@@ -6,24 +6,24 @@ const buscador = document.getElementById('buscador-nutricion');
 const errorMsg = document.getElementById('error-busqueda');
 const contador = document.getElementById('contador-resultados');
 const botonesFiltro = document.querySelectorAll('.filtro-btn');
+const selectObjetivo = document.getElementById('select-objetivo');
 
 let filtroActual = 'todas';
+let objetivoActual = 'todos';
 
 function renderizarLista(lista) {
     if (!contenedor) return;
     contenedor.innerHTML = '';
     
-    if (contador) contador.textContent = `Mostrando ${lista.length} receta(s)`;
+    if (contador) contador.textContent = `Mostrando ${lista.length} receta(s) recomendada(s)`;
 
     if (lista.length === 0) {
-        contenedor.innerHTML = `<div class="no-resultados">No se encontraron recetas.</div>`;
+        contenedor.innerHTML = `<div class="no-resultados">No hay recetas para esta meta.</div>`;
         return;
     }
 
     lista.forEach((item, index) => {
         const etiquetasHTML = item.etiquetas.map(et => `<span class="etiqueta-dieta">${et}</span>`).join('');
-        
-        
         const animacionDelay = index * 0.1; 
 
         contenedor.innerHTML += `
@@ -56,7 +56,7 @@ function renderizarLista(lista) {
 
 function aplicarFiltros() {
     const texto = buscador.value;
-    let filtrados = filtrarRecetas(datosMock, texto);
+    let filtrados = filtrarRecetas(datosMock, texto, objetivoActual);
     
     if (filtroActual !== 'todas') {
         filtrados = filtrados.filter(item => item.dificultad === filtroActual);
@@ -66,36 +66,32 @@ function aplicarFiltros() {
 }
 
 if (buscador) {
-    const ultima = NutricionStorage.obtenerUltimaBusqueda();
-    if (ultima && ultima.ultimaBusqueda) {
-        buscador.value = ultima.ultimaBusqueda;
-    }
-    
     aplicarFiltros();
 
     buscador.addEventListener('input', (e) => {
         const texto = e.target.value;
         const regexSoloLetras = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]*$/;
-        
         if (!regexSoloLetras.test(texto)) {
             errorMsg.style.display = 'block';
             return; 
         } else {
             errorMsg.style.display = 'none';
         }
-        NutricionStorage.guardarUltimaBusqueda(texto);
         aplicarFiltros();
     });
 }
 
+if (selectObjetivo) {
+    selectObjetivo.addEventListener('change', (e) => {
+        objetivoActual = e.target.value;
+        aplicarFiltros();
+    });
+}
 
 botonesFiltro.forEach(boton => {
     boton.addEventListener('click', () => {
-        
         botonesFiltro.forEach(b => b.classList.remove('activo'));
-        
         boton.classList.add('activo');
-        
         filtroActual = boton.dataset.filtro;
         aplicarFiltros();
     });
