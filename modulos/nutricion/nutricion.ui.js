@@ -1,12 +1,11 @@
 import { datosMock, filtrarRecetas } from './nutricion.logica.js';
-import { NutricionStorage } from './nutricion.storage.js';
 
 const contenedor = document.getElementById('lista-nutricion');
 const buscador = document.getElementById('buscador-nutricion');
 const errorMsg = document.getElementById('error-busqueda');
 const contador = document.getElementById('contador-resultados');
 const botonesFiltro = document.querySelectorAll('.filtro-btn');
-const selectObjetivo = document.getElementById('select-objetivo');
+const botonesObjetivo = document.querySelectorAll('.objetivo-btn');
 
 let filtroActual = 'todas';
 let objetivoActual = 'todos';
@@ -67,7 +66,6 @@ function aplicarFiltros() {
 
 if (buscador) {
     aplicarFiltros();
-
     buscador.addEventListener('input', (e) => {
         const texto = e.target.value;
         const regexSoloLetras = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]*$/;
@@ -81,13 +79,21 @@ if (buscador) {
     });
 }
 
-if (selectObjetivo) {
-    selectObjetivo.addEventListener('change', (e) => {
-        objetivoActual = e.target.value;
+// Lógica de los botones de Objetivo (Bajar, Subir, Todos)
+botonesObjetivo.forEach(boton => {
+    boton.addEventListener('click', () => {
+        // Quitar la clase 'activo' de todos los botones de objetivo
+        botonesObjetivo.forEach(b => b.classList.remove('activo'));
+        // Ponerla en el botón clickeado
+        boton.classList.add('activo');
+        
+        // Asignar el nuevo objetivo y filtrar
+        objetivoActual = boton.dataset.objetivo;
         aplicarFiltros();
     });
-}
+});
 
+// Lógica de los botones de Dificultad
 botonesFiltro.forEach(boton => {
     boton.addEventListener('click', () => {
         botonesFiltro.forEach(b => b.classList.remove('activo'));

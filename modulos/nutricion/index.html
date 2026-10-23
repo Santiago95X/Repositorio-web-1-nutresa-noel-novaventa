@@ -50,12 +50,12 @@
         <input type="text" id="buscador-nutricion" placeholder="Buscar receta por nombre..." maxlength="30">
     </div>
     <div class="objetivo-selector">
-        <label for="select-objetivo"><span class="material-symbols-outlined">flag</span> Mi meta personal:</label>
-        <select id="select-objetivo">
-            <option value="todos">Ver todo el catálogo</option>
-            <option value="bajar">Bajar de peso / Perder grasa</option>
-            <option value="subir">Ganar masa muscular / Subir de peso</option>
-        </select>
+        <p class="objetivo-titulo"><span class="material-symbols-outlined">flag</span> ¿Cuál es tu meta personal?</p>
+        <div class="objetivo-botones">
+            <button class="objetivo-btn activo" data-objetivo="todos">Ver todo el catálogo</button>
+            <button class="objetivo-btn" data-objetivo="bajar">Bajar de peso</button>
+            <button class="objetivo-btn" data-objetivo="subir">Ganar masa muscular</button>
+        </div>
     </div>
     <div class="filtros-rapidos">
         <button class="filtro-btn activo" data-filtro="todas">Todas</button>
