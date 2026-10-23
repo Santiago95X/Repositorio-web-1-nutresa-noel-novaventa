@@ -527,117 +527,99 @@ body {
 }
 
 
-.objetivo-selector label {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    color: var(--verde-noche);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
 
 
 
-/* --- Selector de Objetivos Estético (Pills) --- */
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- Panel de Control de Objetivos (Premium) --- */
 .objetivo-selector {
+    background: #ffffff;
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+    border: 1px solid rgba(0,0,0,0.05);
     text-align: center;
-    margin-bottom: 2.5rem;
 }
 
 .objetivo-titulo {
     font-family: 'Poppins', sans-serif;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--verde-noche);
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
+}
+
+.objetivo-titulo .material-symbols-outlined {
+    color: var(--lima);
+    font-size: 1.8rem;
 }
 
 .objetivo-botones {
     display: flex;
     justify-content: center;
-    gap: 12px;
+    gap: 1rem;
     flex-wrap: wrap;
 }
 
 .objetivo-btn {
-    background: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #f8f9fa;
     color: var(--gris-texto);
-    border: 2px solid rgba(0,0,0,0.08);
-    padding: 0.7rem 1.5rem;
-    border-radius: 30px;
+    border: 2px solid transparent;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
     font-family: 'Inter', sans-serif;
-    font-size: 0.95rem;
+    font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+}
+
+.objetivo-btn .material-symbols-outlined {
+    font-size: 1.2rem;
+    color: #888;
+    transition: color 0.3s ease;
 }
 
 .objetivo-btn:hover {
+    background: #ffffff;
     border-color: var(--lima);
     color: var(--verde-noche);
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.objetivo-btn:hover .material-symbols-outlined {
+    color: var(--verde-nutresa);
 }
 
 .objetivo-btn.activo {
     background: var(--verde-nutresa);
     color: #ffffff;
     border-color: var(--verde-nutresa);
-    box-shadow: 0 5px 15px rgba(33, 91, 51, 0.2);
-}
-
-/* --- Selector de Objetivos Estético (Pills) --- */
-.objetivo-selector {
-    text-align: center;
-    margin-bottom: 2.5rem;
-}
-
-.objetivo-titulo {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    color: var(--verde-noche);
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-}
-
-.objetivo-botones {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    flex-wrap: wrap;
-}
-
-.objetivo-btn {
-    background: #ffffff;
-    color: var(--gris-texto);
-    border: 2px solid rgba(0,0,0,0.08);
-    padding: 0.7rem 1.5rem;
-    border-radius: 30px;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.95rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
-}
-
-.objetivo-btn:hover {
-    border-color: var(--lima);
-    color: var(--verde-noche);
+    box-shadow: 0 8px 20px rgba(33, 91, 51, 0.25);
     transform: translateY(-2px);
 }
 
-.objetivo-btn.activo {
-    background: var(--verde-nutresa);
+.objetivo-btn.activo .material-symbols-outlined {
     color: #ffffff;
-    border-color: var(--verde-nutresa);
-    box-shadow: 0 5px 15px rgba(33, 91, 51, 0.2);
 }
