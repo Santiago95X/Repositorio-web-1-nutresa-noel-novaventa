@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const contador = document.getElementById('contador-resultados');
     const botonesObjetivo = document.querySelectorAll('.objetivo-btn');
 
-    let todasLasRecetas = [];
+    let recetasGlobales = [];
     let objetivoActual = 'todos';
 
     function renderizarLista(lista) {
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (contador) contador.textContent = `Mostrando ${lista.length} receta(s)`;
 
         if (lista.length === 0) {
-            contenedor.innerHTML = `<div class="no-resultados">No hay recetas que coincidan con tu busqueda.</div>`;
+            contenedor.innerHTML = `<div class="no-resultados">No hay recetas que coincidan con tu búsqueda.</div>`;
             return;
         }
 
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     function aplicarFiltros() {
         const texto = buscador ? buscador.value.toLowerCase() : '';
         
-        let filtrados = todasLasRecetas.filter(receta => {
+        let filtrados = recetasGlobales.filter(receta => {
             const coincideTexto = receta.nombre.toLowerCase().includes(texto);
             let coincideObjetivo = true;
             if (objetivoActual !== 'todos') {
@@ -63,22 +63,19 @@ document.addEventListener('DOMContentLoaded', async () => {
         renderizarLista(filtrados);
     }
 
-    // Conexión con la API con manejo de errores amigable
+    // Cargar desde la API
     try {
-        todasLasRecetas = await NutricionServicio.obtenerTodasLasRecetas();
+        recetasGlobales = await NutricionServicio.obtenerTodasLasRecetas();
         
-        if (todasLasRecetas.length === 0) {
-            contenedor.innerHTML = `
-                <div class="no-resultados" style="color: #D6212A;">
-                    <span class="material-symbols-outlined" style="font-size: 3rem;">wifi_off</span>
-                    <p>Ups, no se pudo conectar con el servidor. Revisa que el Back-end esté corriendo.</p>
-                </div>`;
+        if (recetasGlobales.length === 0) {
+            contenedor.innerHTML = `<div class="no-resultados"><p>No hay datos disponibles. Verifica la conexión con el servidor.</p></div>`;
             return;
         }
         
-        renderizarLista(todasLasRecetas);
+        renderizarLista(recetasGlobales);
     } catch (error) {
         console.error("Error al cargar recetas:", error);
+        contenedor.innerHTML = `<div class="no-resultados"><p>Error de conexión con la API.</p></div>`;
     }
 
     if (buscador) {
@@ -105,4 +102,3 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     });
 });
-console.log("Carga finalizada.");

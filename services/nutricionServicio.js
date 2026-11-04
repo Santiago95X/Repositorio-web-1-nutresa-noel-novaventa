@@ -9,12 +9,14 @@ const NutricionServicio = {
             return []; 
         }
     },
-    async obtenerNutricionPorReceta(idReceta) {
+
+    async obtenerRecetaPorId(id) {
         try {
-            const response = await fetch(`${API_CONFIG.baseUrl}/nutricion/receta/${idReceta}`);
+            const response = await fetch(`${API_CONFIG.baseUrl}/recetas/${id}`);
             if (!response.ok) return null; 
             return await response.json();
         } catch (error) {
+            console.error("Error al cargar receta:", error);
             return null;
         }
     }
