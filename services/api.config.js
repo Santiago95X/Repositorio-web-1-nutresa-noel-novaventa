@@ -1,6 +1,4 @@
-(function () {
-  window.API_CONFIG = {
+const API_CONFIG = {
     modo: "api",
-    baseUrl: "http://localhost:8080/api"
-  };
-})();
+    baseUrl: "http:
+};

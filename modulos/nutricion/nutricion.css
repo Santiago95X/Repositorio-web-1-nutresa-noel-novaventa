@@ -1,7 +1,3 @@
-/* =========================================
-   MÓDULO DE NUTRICIÓN - DISEÑO CORPORATIVO
-   Paleta de colores oficial (Nutresa)
-   ========================================= */
 :root {
     --verde-noche: #114622;
     --verde-nutresa: #215B33;
@@ -339,34 +335,6 @@ body {
     font-size: 1.2rem;
     opacity: 0.8;
 }
-.filtros-rapidos {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 2rem;
-}
-.filtro-btn {
-    background: #ffffff;
-    border: 1px solid rgba(0,0,0,0.1);
-    padding: 0.5rem 1.5rem;
-    border-radius: 30px;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--gris-texto);
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-.filtro-btn:hover {
-    border-color: var(--lima);
-    color: var(--verde-noche);
-}
-.filtro-btn.activo {
-    background: var(--verde-nutresa);
-    color: #ffffff;
-    border-color: var(--verde-nutresa);
-    box-shadow: 0 4px 10px rgba(33, 91, 51, 0.2);
-}
 .nutricion-wrapper header h1 {
     background: linear-gradient(90deg, var(--verde-noche) 0%, var(--verde-hoja) 100%);
     -webkit-background-clip: text;
@@ -527,117 +495,56 @@ body {
 }
 
 
-.objetivo-selector label {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    color: var(--verde-noche);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.progreso-nutricional {
+    margin: 2rem 0;
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.progreso-texto {
     display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-
-
-/* --- Selector de Objetivos Estético (Pills) --- */
-.objetivo-selector {
-    text-align: center;
-    margin-bottom: 2.5rem;
-}
-
-.objetivo-titulo {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    color: var(--verde-noche);
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-}
-
-.objetivo-botones {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    flex-wrap: wrap;
-}
-
-.objetivo-btn {
-    background: #ffffff;
-    color: var(--gris-texto);
-    border: 2px solid rgba(0,0,0,0.08);
-    padding: 0.7rem 1.5rem;
-    border-radius: 30px;
+    justify-content: space-between;
     font-family: 'Inter', sans-serif;
-    font-size: 0.95rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
-}
-
-.objetivo-btn:hover {
-    border-color: var(--lima);
-    color: var(--verde-noche);
-    transform: translateY(-2px);
-}
-
-.objetivo-btn.activo {
-    background: var(--verde-nutresa);
-    color: #ffffff;
-    border-color: var(--verde-nutresa);
-    box-shadow: 0 5px 15px rgba(33, 91, 51, 0.2);
-}
-
-/* --- Selector de Objetivos Estético (Pills) --- */
-.objetivo-selector {
-    text-align: center;
-    margin-bottom: 2.5rem;
-}
-
-.objetivo-titulo {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    color: var(--verde-noche);
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-}
-
-.objetivo-botones {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    flex-wrap: wrap;
-}
-
-.objetivo-btn {
-    background: #ffffff;
+    font-size: 0.9rem;
     color: var(--gris-texto);
-    border: 2px solid rgba(0,0,0,0.08);
-    padding: 0.7rem 1.5rem;
-    border-radius: 30px;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.95rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+    margin-bottom: 0.8rem;
+    font-weight: 500;
 }
 
-.objetivo-btn:hover {
-    border-color: var(--lima);
-    color: var(--verde-noche);
-    transform: translateY(-2px);
+.progreso-texto strong {
+    color: var(--verde-nutresa);
+    font-size: 1rem;
 }
 
-.objetivo-btn.activo {
-    background: var(--verde-nutresa);
-    color: #ffffff;
-    border-color: var(--verde-nutresa);
-    box-shadow: 0 5px 15px rgba(33, 91, 51, 0.2);
+.barra-fondo {
+    width: 100%;
+    height: 12px;
+    background: rgba(0,0,0,0.08);
+    border-radius: 10px;
+    overflow: hidden;
 }
+
+.barra-relleno {
+    height: 100%;
+    background: linear-gradient(90deg, var(--verde-nutresa) 0%, var(--lima) 100%);
+    border-radius: 10px;
+    transition: width 1s ease-in-out;
+}
+

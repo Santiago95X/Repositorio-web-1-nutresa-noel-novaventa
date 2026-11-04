@@ -1,65 +1,53 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sazón · Home</title>
-  <link rel="stylesheet" href="assets/css/sazon.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sazón - Nutresa Digital</title>
+    <link rel="stylesheet" href="assets/css/layout-global.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
 <body>
-  <header data-layout="header"></header>
 
-  <main class="contenedor" id="contenido-principal">
-    <section class="hero">
-      <p class="hero-etiqueta">Recetario digital · Front I</p>
-      <h1>Sazón</h1>
-      <p class="hero-texto">
-        Espacio base para construir los módulos del proyecto integrador con HTML, CSS y JavaScript puros.
-      </p>
-    </section>
+    <!-- Sidebar Inyectado por JS -->
+    <aside id="sidebar-global"></aside>
 
-    <section class="modulos-grid" aria-label="Acceso a módulos">
-      <a class="tarjeta-modulo tarjeta-usuarios" href="modulos/usuarios/index.html">
-        <h2>Usuarios (común)</h2>
-        <p>Registro, inicio de sesión y usuarios activos (demo docente).</p>
-      </a>
-      <a class="tarjeta-modulo tarjeta-catalogo" href="modulos/catalogo/index.html">
-        <h2>Catálogo</h2>
-        <p>Productos, marcas y categorías.</p>
-      </a>
-      <a class="tarjeta-modulo tarjeta-recetario" href="modulos/recetario/index.html">
-        <h2>Recetario</h2>
-        <p>Recetas, pasos e ingredientes.</p>
-      </a>
-      <a class="tarjeta-modulo tarjeta-despensa" href="modulos/despensa/index.html">
-        <h2>Despensa</h2>
-        <p>Inventario y consumo del hogar.</p>
-      </a>
-      <a class="tarjeta-modulo tarjeta-nutricion" href="modulos/nutricion/index.html">
-        <h2>Nutrición</h2>
-        <p>Análisis nutricional y objetivos.</p>
-      </a>
-      <a class="tarjeta-modulo tarjeta-planificador" href="modulos/planificador/index.html">
-        <h2>Planificador</h2>
-        <p>Planeación semanal de comidas.</p>
-      </a>
-      <a class="tarjeta-modulo tarjeta-comunidad" href="modulos/comunidad/index.html">
-        <h2>Comunidad</h2>
-        <p>Interacción entre usuarios.</p>
-      </a>
-      <a class="tarjeta-modulo tarjeta-mercadeo" href="modulos/mercadeo/index.html">
-        <h2>Mercadeo</h2>
-        <p>Promociones, cupones y campañas.</p>
-      </a>
-    </section>
-  </main>
+    <div class="main-container">
+        <!-- Header Inyectado por JS -->
+        <header data-layout="header"></header>
 
-  <footer data-layout="footer"></footer>
+        <main class="content-area">
+            <!-- Hero Section basada en la imagen 1 -->
+            <section class="hero-inicio">
+                <span class="badge">RECETARIO DIGITAL · GRUPO NUTRESA</span>
+                <h1>Cocina con lo que tienes en casa.</h1>
+                <p>Explora recetas con productos Nutresa, organiza tu despensa y planea el menú de tu semana en un solo lugar.</p>
+                
+                <div class="buscador-despensa">
+                    <label for="input-despensa">¿QUÉ TIENES EN TU DESPENSA?</label>
+                    <div class="input-group">
+                        <input type="text" id="input-despensa" placeholder="Ej: pasta, salchicha, cebolla">
+                        <button class="btn-primary">Buscar recetas</button>
+                    </div>
+                </div>
 
-  <script src="services/api.config.js"></script>
-  <script src="data/usuario.js"></script>
-  <script src="data/productos.js"></script>
-  <script src="data/recetas.js"></script>
-  <script src="assets/js/layout.js"></script>
+                <div class="tags-rapidos">
+                    <span>Salchicha Ranchera +</span>
+                    <span>Pasta Doria +</span>
+                    <span>Galletas Noel +</span>
+                    <span>Chocolisto +</span>
+                </div>
+
+                <div class="acciones-hero">
+                    <button class="btn-primary">Explorar recetas</button>
+                    <button class="btn-secondary">Mi despensa · 0 ingredientes</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/layout.js"></script>
 </body>
 </html>

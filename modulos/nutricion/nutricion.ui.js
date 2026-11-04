@@ -1,30 +1,21 @@
 import { datosMock, filtrarRecetas } from './nutricion.logica.js';
-
 const contenedor = document.getElementById('lista-nutricion');
 const buscador = document.getElementById('buscador-nutricion');
 const errorMsg = document.getElementById('error-busqueda');
 const contador = document.getElementById('contador-resultados');
-const botonesFiltro = document.querySelectorAll('.filtro-btn');
 const botonesObjetivo = document.querySelectorAll('.objetivo-btn');
-
-let filtroActual = 'todas';
 let objetivoActual = 'todos';
-
 function renderizarLista(lista) {
     if (!contenedor) return;
     contenedor.innerHTML = '';
-    
     if (contador) contador.textContent = `Mostrando ${lista.length} receta(s) recomendada(s)`;
-
     if (lista.length === 0) {
-        contenedor.innerHTML = `<div class="no-resultados">No hay recetas para esta meta.</div>`;
+        contenedor.innerHTML = `<div class="no-resultados">No hay recetas para esta meta o búsqueda.</div>`;
         return;
     }
-
     lista.forEach((item, index) => {
         const etiquetasHTML = item.etiquetas.map(et => `<span class="etiqueta-dieta">${et}</span>`).join('');
         const animacionDelay = index * 0.1; 
-
         contenedor.innerHTML += `
             <div class="tarjeta-receta" style="animation-delay: ${animacionDelay}s">
                 <div class="tarjeta-imagen">
@@ -52,18 +43,11 @@ function renderizarLista(lista) {
         `;
     });
 }
-
 function aplicarFiltros() {
     const texto = buscador.value;
-    let filtrados = filtrarRecetas(datosMock, texto, objetivoActual);
-    
-    if (filtroActual !== 'todas') {
-        filtrados = filtrados.filter(item => item.dificultad === filtroActual);
-    }
-    
+    const filtrados = filtrarRecetas(datosMock, texto, objetivoActual);
     renderizarLista(filtrados);
 }
-
 if (buscador) {
     aplicarFiltros();
     buscador.addEventListener('input', (e) => {
@@ -78,27 +62,11 @@ if (buscador) {
         aplicarFiltros();
     });
 }
-
-// Lógica de los botones de Objetivo (Bajar, Subir, Todos)
 botonesObjetivo.forEach(boton => {
     boton.addEventListener('click', () => {
-        // Quitar la clase 'activo' de todos los botones de objetivo
         botonesObjetivo.forEach(b => b.classList.remove('activo'));
-        // Ponerla en el botón clickeado
         boton.classList.add('activo');
-        
-        // Asignar el nuevo objetivo y filtrar
         objetivoActual = boton.dataset.objetivo;
-        aplicarFiltros();
-    });
-});
-
-// Lógica de los botones de Dificultad
-botonesFiltro.forEach(boton => {
-    boton.addEventListener('click', () => {
-        botonesFiltro.forEach(b => b.classList.remove('activo'));
-        boton.classList.add('activo');
-        filtroActual = boton.dataset.filtro;
         aplicarFiltros();
     });
 });
