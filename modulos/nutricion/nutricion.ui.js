@@ -1,3 +1,4 @@
+console.log("Iniciando modulo de nutricion...");
 import { datosMock, filtrarRecetas } from './nutricion.logica.js';
 const contenedor = document.getElementById('lista-nutricion');
 const buscador = document.getElementById('buscador-nutricion');
