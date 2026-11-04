@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
-    // Calcular porcentaje de calorías diarias (basado en una dieta de 2000 kcal)
     const porcentajeCalorias = Math.round((receta.calorias / 2000) * 100);
 
     contenedor.innerHTML = `
@@ -25,7 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 <span>🥩 ${receta.macros.prot} Prot</span>
             </div>
 
-            <!-- Barra de progreso nutricional -->
             <div class="progreso-nutricional">
                 <div class="progreso-texto">
                     <span>Aporte calórico diario (Base 2000 kcal)</span>
@@ -46,9 +44,11 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
 
     const btnGuardar = document.getElementById('btn-guardar-despensa');
-    
-    // Verificar si ya está guardada al cargar la página
     let despensa = JSON.parse(localStorage.getItem('sazon_despensa_usuario')) || [];
+    
+    // Actualizamos el Sidebar al cargar la página si ya hay cosas guardadas
+    actualizarSidebarDespensa(despensa.length);
+
     if (despensa.includes(receta.nombre)) {
         btnGuardar.innerHTML = `<span class="material-symbols-outlined">check_circle</span> Ya está en tu despensa`;
         btnGuardar.style.background = 'var(--verde-noche)';
@@ -62,9 +62,25 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!despensa.includes(receta.nombre)) {
             despensa.push(receta.nombre);
             localStorage.setItem('sazon_despensa_usuario', JSON.stringify(despensa));
+            
             btnGuardar.innerHTML = `<span class="material-symbols-outlined">check_circle</span> ¡Añadido con éxito!`;
             btnGuardar.style.background = 'var(--lima)';
             btnGuardar.style.color = 'var(--verde-noche)';
+            
+            // Actualizamos el contador del Sidebar
+            actualizarSidebarDespensa(despensa.length);
         }
     });
+
+    // Función para buscar el botón del sidebar y cambiarle el texto
+    function actualizarSidebarDespensa(cantidad) {
+        const enlaceDespensa = document.querySelector('a.nav-item[href*="despensa"], a.nav-item:contains("Mi despensa")'); // Buscamos el enlace
+        // Como no podemos usar :contains en querySelector nativo, hacemos un bucle:
+        const enlaces = document.querySelectorAll('.sidebar-nav .nav-item');
+        enlaces.forEach(enlace => {
+            if (enlace.innerText.includes('Mi despensa')) {
+                enlace.innerHTML = `<span class="material-symbols-outlined">inventory_2</span> Mi despensa (${cantidad})`;
+            }
+        });
+    }
 });
