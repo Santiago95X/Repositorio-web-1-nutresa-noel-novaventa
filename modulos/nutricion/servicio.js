@@ -1,8 +1,15 @@
 (function () {
-  // Servicio local del módulo. Puede cambiarse por una API más adelante.
   window.nutricionServicio = {
     async listarTodos() {
-      return Promise.resolve(window.platosNutricionData || []);
-    },
+      return Promise.resolve(
+        window.nutricionMockData || {
+          informacionNutricional: [],
+          perfilesAlimentarios: [],
+          alergenos: [],
+          restriccionesPerfil: [],
+          objetivosNutricionales: []
+        }
+      );
+    }
   };
 })();
